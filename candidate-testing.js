@@ -21,7 +21,7 @@ console.log( "Welcome " + candidateName + "!");
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
- question = "Who was the first American woman in space? ";
+ 
  correctAnswer = "Sally Ride"; 
 
 question = input.question("Who was the first American woman in space? ");
