@@ -54,7 +54,7 @@ candidateAnswer= question;
 console.log("Your Answer: " + candidateAnswer);
 console.log("Correct Answer: " + correctanswers[i]);
 
-if (candidateAnswer == correctanswers[i])
+if (candidateAnswer.toLowerCase() == correctanswers[i].toLowerCase())
  {
    console.log("You are correct!");
    points++; 
