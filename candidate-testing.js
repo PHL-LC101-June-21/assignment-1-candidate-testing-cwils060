@@ -11,27 +11,86 @@ let candidateAnswer;
 let questions;
 let correctAnswers;
 let candidateAnswers;
+let points= 0; 
+let totalPoints = 5; 
 
 
-function askForName() {
+function askForName() { }
   // TODO 1.1b: Ask for candidate's name //
 
-}
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
+ 
+ 
 
+//question = input.question("Who was the first American woman in space? ");
+//correctAnswer = "Sally Ride"; 
+//candidateAnswer= question;
+//console.log("Your Answer: " + candidateAnswer);
+//console.log("Correct Answer: " + correctAnswer); 
 
 }
 
+
+questions=["Who was the first American woman in space?",
+ "True or false: 5 kilometer == 5000 meters?", 
+ "(5*3)/2*10=?", 
+ "Given the array [8, 'Orbit', 'Trajectory', 45] what entry is at index 2?", 
+ "What is the minimum crew size for the ISS?"]; 
+
+ correctanswers= ["Sally Ride", "true", "40", "Trajectory", "3"];
+
+ candidateName = input.question ("What is your name?");
+console.log( "Welcome " + candidateName + "!"); 
+
+console.log("");
+
+for ( let i = 0; i< questions.length; i++)
+ {
+
+   question = input.question(questions[i]);
+candidateAnswer= question;
+console.log("Your Answer: " + candidateAnswer);
+console.log("Correct Answer: " + correctanswers[i]);
+
+if (candidateAnswer.toLowerCase() == correctanswers[i].toLowerCase())
+ {
+   console.log("You are correct!");
+   points++; 
+   console.log("Points:" + points);
+ }
+ else 
+ {
+   console.log("Wrong Answer!");
+   console.log("Points: 0");
+ } 
+console.log("");
+console.log("");
+ 
+ }
+
+
 function gradeQuiz(candidateAnswers) {
 
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly  
+ 
 
   let grade;
-  
+   
+   grade = points/totalPoints * 100; 
+    
+    console.log(`>>Overall Grade: ${grade}% (You scored ${points} out of ${totalPoints} points)<<< `);
 
+    if (grade>=80)
+    {
+      console.log(">>>Status: PASSED<<<"); 
+    }
+    else 
+    {
+      console.log(">>>Status: FAILED<<<");
+    }
+console.log("");
   return grade;
 }
 
