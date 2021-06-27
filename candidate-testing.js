@@ -11,6 +11,8 @@ let candidateAnswer;
 let questions;
 let correctAnswers;
 let candidateAnswers;
+let points= 0; 
+let totalPoints = 5; 
 
 
 function askForName() { }
@@ -52,14 +54,16 @@ candidateAnswer= question;
 console.log("Your Answer: " + candidateAnswer);
 console.log("Correct Answer: " + correctanswers[i]);
 
-
-if (candidateAnswer == correctanswers [i])
+if (candidateAnswer == correctanswers[i])
  {
    console.log("You are correct!");
+   points++; 
+   console.log("Points:" + points);
  }
  else 
  {
    console.log("Wrong Answer!");
+   console.log("Points: 0");
  } 
 console.log("");
 console.log("");
@@ -69,19 +73,24 @@ console.log("");
 
 function gradeQuiz(candidateAnswers) {
 
-  /* TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
- //if (candidateAnswer == "Sally Ride" || candidateAnswer== "sally ride" || candidateAnswer == "SALLY RIDE")
- //{
-   console.log("You are correct!");
- }
- else 
- {
-   console.log("Wrong Answer");
- }*/
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly  
+ 
 
   let grade;
-  
+   
+   grade = points/totalPoints * 100; 
+    
+    console.log(`>>Overall Grade: ${grade}% (You scored ${points} out of ${totalPoints} points)<<< `);
 
+    if (grade>=80)
+    {
+      console.log(">>>Status: PASSED<<<"); 
+    }
+    else 
+    {
+      console.log(">>>Status: FAILED<<<");
+    }
+console.log("");
   return grade;
 }
 
